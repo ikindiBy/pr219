@@ -3,6 +3,8 @@ const cors = require("cors");
 const axios = require("axios");
 const path = require("path");
 
+// const routes = require("./routes");
+
 const app = express();
 const PORT = process.env.PORT || 80;
 
@@ -37,11 +39,14 @@ app.get("/api", (req, res) => {
   });
 });
 
+console.log("===========> work!");
+
 if (process.env.NODE_ENV === "production") {
+  console.log("===========> prod");
   app.use(express.static("client/build"));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
 }
 
