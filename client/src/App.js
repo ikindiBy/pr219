@@ -15,6 +15,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={user.user.avatar_url} className="App-logo" alt="logo" />
+        <h2>Now with github!</h2>
         <p>{user.user.login}</p>
         <a
           className="App-link"
